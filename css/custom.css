@@ -1,0 +1,454 @@
+/* ################ MAIN ELEMENTS ################ */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ################ FOOTER AND MAIN PAGE ################ */
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+
+#content-wrap {
+    padding-bottom: 250px;    /* custom Footer height */
+}
+
+/* ################ FEEDBACK ################ */
+
+.modal-backdrop {
+    /* Corrige modal ficar todo preto no overlay */
+    display: none;
+}
+
+.feedbackIconBar {
+    display: none;
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+.feedbackIconBar a {
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+}
+
+.feedbackIconBar a:hover {
+    background-color: rgb(52, 13, 160);
+}
+
+.feedback {
+    background: #007bb5;
+    color: white;
+  }
+
+.comment-area textarea {
+    resize: none;
+}
+
+.rating {
+    display: inline-flex;
+    margin-top: -10px;
+    flex-direction: row-reverse
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 28px;
+    font-size: 35px;
+    color: #faea08;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+/* ################ MAIN PAGE ################ */
+
+.iconsMainPage{
+    object-fit: cover;
+    height: 45px;
+}
+
+/* ################ DOCTORS CARDS ################ */
+
+.customCard {
+    margin-left: 200px;
+    min-height:400px;
+    background:#fff;
+    box-shadow:0 20px 50px rgba(0,0,0,.1);
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.customCard .box {
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    width:100%;
+}
+
+.customCard .box .img {
+    width:120px;
+    height:120px;
+    margin:0 auto;
+    border-radius:50%;
+    overflow:hidden;
+}
+
+.customCard .box .img img {
+    width:100%;
+    height:100%;
+}
+
+.customCard .box h2 {
+    font-size:20px;
+    color:#262626;
+    margin:20px auto;
+}
+
+.customCard .box h2 span {
+    font-size:14px;
+    background:#438be9;
+    color:#fff;
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:15px;
+}
+
+.customCard .box p {
+    color:#262626;
+}
+
+.customCard .box span {
+    display:inline-flex;
+}
+
+/* ################ CAROUSEL ################ */
+
+.carousel-item h1, .carousel-item h5{
+    font-family: "Times New Roman", Times, serif;
+}
+
+.carousel-item img
+{
+    object-fit: cover;
+    width: 100%;
+    height: 600px;
+}
+
+.carousel-item:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.2);
+  }
+
+/* ################ ADMIN USER PROFILES ################ */
+
+.adminAction {
+    width: 90px;
+    height: 30px;
+}
+
+.main-section {
+    border: 2px solid #207785;
+    background-color: #fff;
+    margin: 30px;
+    width: 300px;
+}
+
+.user-detail {
+    margin: -50px 0px 30px 0px;
+}
+
+.user-detail img {
+    height: 100px;
+    width: 100px;
+}
+
+.user-detail h5 {
+    margin: 15px 0px 5px 0px;
+}
+
+/* ################ MODAL ################ */
+
+.adminModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    /* Show above everything else */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    background-color: rgb(39, 39, 39);
+    background-color: rgb(39, 39, 39)
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    /* Show above everything else */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    background-color: rgb(39, 39, 39);
+    background-color: rgba(39, 39, 39, 0.6);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    -webkit-animation: fadeInDown 500ms ease-in-out;
+    animation: fadeInDown 500ms ease-in-out;
+}
+
+.closeModal {
+    color: #000;
+    height: 25px;
+    width: 25px;
+}
+
+.closeModal:hover,
+.close:focus {
+    color: rgb(22, 17, 17);
+    cursor: pointer;
+}
+
+/* ################ AVATAR ################ */
+
+.littleAvatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.boxAvatar {
+    margin-top: 40px;
+}
+
+/* ################ ANIMATION ################ */
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+/* Standard syntax */
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ################ ADMIN PAGE ################ */
+
+.jumbotron {
+    background: rgba(80, 118, 167, 0.3);
+}
+
+/* ################ Ratings ################ */
+
+.lead{
+    margin-bottom: 100px;
+}
+
+.stars-outer {
+    position: relative;
+    display: inline-block;
+  }
+  
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  
+.stars-outer::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #ccc;
+  }
+  
+.stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #f8ce0b;
+  }
+
+  /* ################ Doctor Profile ################ */
+
+  .doctor_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    margin-top: 50px;
+  }
+
+  .title{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  .p1{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+  .commentBox {
+    padding: 1%;
+    width: 96%;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.leftPanelImg {
+    width: 10%;
+    float: left;
+}
+
+.leftPanelImg img {
+    border-radius: 100%
+}
+
+.rightPanel {
+    width: 85%;
+    float: left;
+    margin-left: 1%;
+}
+
+.clear {
+    clear: both;
+}
+
+.form {
+    padding: 10px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form input[type="text"],
+.form textarea,
+.form input[type="date"] {
+    border: 1px solid #000;
+    padding: 2px;
+    width: 300px;
+}
+
+/* ################ FOOTER ################ */
+
+.customFooter {
+    width: 100%;
+    background-color: #26272b;
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #737373;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.customFooter hr {
+    border-top-color: #bbb;
+    opacity: 0.5
+}
+
+.customFooter h6 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px
+}
+
+.customFooter a {
+    color: #737373;
+}
