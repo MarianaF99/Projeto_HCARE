@@ -182,6 +182,8 @@ export default class AdminView {
                                 <h5>${doctors[i].firstName} ${doctors[i].lastName}</h5>
                                 <h7>${doctors[i].specialty} </h7>
                                 <p ><i class="fa fa-envelope" aria-hidden="true"></i> ${doctors[i].email}</p>
+                                <h7>Score: ${doctors[i].score} </h7>
+                                <br>
                                 <a href="#" name="${doctors[i].email}" class="btn btn-danger btn-sm remove">Delete</a>
                             </div>
                         </div>

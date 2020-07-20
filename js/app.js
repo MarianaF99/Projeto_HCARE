@@ -69,7 +69,8 @@ class App {
                 gender: 'Female',
                 adress: 'Rua Óscar da Silva, Porto',
                 phone: '912364798',
-                specialty: 'Dermatologist'
+                specialty: 'Dermatologist',
+                score: 0
             },
             {
                 firstName: 'Harry',
@@ -80,7 +81,8 @@ class App {
                 gender: 'Male',
                 adress: 'Rua da Constituição, Porto',
                 phone: '912864778',
-                specialty: 'Dermatologist'
+                specialty: 'Dermatologist',
+                score: 0
             },
             {
                 firstName: 'James',
@@ -91,7 +93,8 @@ class App {
                 gender: 'Male',
                 adress: 'Rua da Alegria, Porto',
                 phone: '962486778',
-                specialty: 'Pediatrician'
+                specialty: 'Pediatrician',
+                score: 0
             },
             {
                 firstName: 'Josh',
@@ -102,7 +105,8 @@ class App {
                 gender: 'Male',
                 adress: 'Avenida Júlio Saúl Dias, Vila do Conde',
                 phone: '962486778',
-                specialty: 'Pediatrician'
+                specialty: 'Pediatrician',
+                score: 0
             },
             {
                 firstName: 'Taylor',
@@ -113,7 +117,8 @@ class App {
                 gender: 'Female',
                 adress: 'Avenida Doutor António Bento Martins Júnior, Vila do Conde',
                 phone: '962486778',
-                specialty: 'Psychiatrist'
+                specialty: 'Psychiatrist',
+                score: 0
             }
         ];
 

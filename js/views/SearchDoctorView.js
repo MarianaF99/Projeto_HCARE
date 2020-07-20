@@ -28,7 +28,7 @@ export default class SearchDoctorView {
     bindAppointmentBtn() {
         this.btnCallDoctor.addEventListener('click', () => {
             this.createAppointment();
-            this.userController.UpdateExperience() //aumenta expiriência quando o utilizador chama um médico
+            this.userController.UpdateExperience() //aumenta expiriência quando o utilizador marca consulta
         })
     }
 
@@ -69,20 +69,9 @@ export default class SearchDoctorView {
 
 
 
-
-
-
     callDoctorMessageHandler(message, type) {
         this.doctorMessage.innerHTML = `<div class="alert alert-${type}" role="alert">${message}</div>`
     }
-
-
-
-
-
-
-
-
 
 
     geocodeAddress = function(geocoder, resultsMap) {

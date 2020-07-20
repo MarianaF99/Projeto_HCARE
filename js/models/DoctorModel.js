@@ -20,7 +20,8 @@ export default class DoctorModel {
             gender: gender,
             adress: adress,
             phone: phone,
-            specialty: specialty
+            specialty: specialty,
+            score: 0
         }
         this.doctors.push(doctor); //adiciona o medico à linha 4
         this._persist();
