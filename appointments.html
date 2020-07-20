@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HCare</title>
+    <meta name="description" content="HCare é um site de médicos ao domicilio">
+
+    <link rel="stylesheet" type="text/css" href="css/lib/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
+</head>
+
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo.png" height="45" alt="Logo">
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="searchdoctor.html" id="searchDoctoNavLink" class="nav-item nav-link"></a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="#" id="loginStatusNavLink" class="nav-item nav-link visible"></a>
+                        <a href="register.html" id="registerNavLink" class="nav-item nav-link"></a>
+                        <a href="userProfile.html" id="userProfileNavLink" class="nav-item nav-link"></a>
+                    </div>
+                </div>
+            </nav>
+
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 href="appointments.html">Appointments</h2>
+
+                            <hr>
+                        </div>
+                    </div>
+                    <section>
+                        <div id="appointments" class="jumbotron text">
+                            <h1>Appointments</h1>
+
+
+                        </div>
+
+                        <div class="container">
+                            <div class="row" id="appointmentsVisualization">
+
+
+                            </div>
+                        </div>
+
+                    </section>
+
+            </section>
+        </div>
+        <footer class="customFooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6>About</h6>
+                        <p class="text-justify">Page in development phase.</p>
+                    </div>
+                    <div class="col-md-12">
+                        <h6>Admin Area</h6>
+                        <a href="admin.html" class="text-justify">Admin Page</a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                            <a href="#">HCare</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="js/lib/jquery.min.js"></script>
+        <script src="js/lib/bootstrap.min.js"></script>
+        <script type="module" src="js/App.js"></script>
+    </div>
+</body>
+
+</html>
