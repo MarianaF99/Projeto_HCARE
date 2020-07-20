@@ -28,6 +28,7 @@ export default class SearchDoctorView {
     bindAppointmentBtn() {
         this.btnCallDoctor.addEventListener('click', () => {
             this.createAppointment();
+            this.userController.UpdateExperience() //aumenta expiriência quando o utilizador chama um médico
         })
     }
 

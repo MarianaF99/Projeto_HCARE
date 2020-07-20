@@ -14,6 +14,7 @@ export default class UserController {
     UpdateUser(firstName, surname, address, phone, password, changePasswordState = false) {
         let userLoggedEmail = this.userModel.GetUserLoggedEmail()
 
+        //altera pass, verifica se esta a usar a mesma pass
         if (changePasswordState === true) {
             if (this.userModel.GetAllUsers().some(user => user.email === userLoggedEmail && password === user.password)) {
                 throw Error(`The new password is the same as the actual.`)
@@ -59,6 +60,11 @@ export default class UserController {
         this.userModel.GiveUserFeedback(user.email)
     }
 
+    UpdateExperience(){ //Atualiza Experiencia do Utilizador
+        let user = this.userModel.GetUserLoggedData()
+        this.userModel.IncreaseUserLevelExperience(user.email)
+    }
+
     Login(email, password) {
         if (this.userModel.GetAllUsers().some(user => user.email === email)) {
             if (this.userModel.GetAllUsers().some(user => user.email === email && user.password === password)) {
@@ -66,7 +72,7 @@ export default class UserController {
                     throw Error(`The user is blocked by the admin.`)
                 } else {
                     this.userModel.Login(email)
-                    this.userModel.IncreaseUserLevelExperience(email)
+                    this.userModel.IncreaseUserLevelExperience(email) //sempre que o user faz login ganha experiencia
                     window.location.replace("index.html")
                 }
             } else {
