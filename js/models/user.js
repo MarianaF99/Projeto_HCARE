@@ -1,4 +1,5 @@
 export default class User {
+    //ao preencher o formulario é chamado o construtor da classe
     constructor(firstName, surname, email, dateOfBirth, gender, address, phone, password, avatarSourceImage, blockState = false) {
         this.firstName = firstName
         this.surname = surname

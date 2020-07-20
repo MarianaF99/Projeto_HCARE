@@ -33,7 +33,7 @@ export default class NavLinksView {
         this.BindLoginForm()
     }
 
-    OpenLoginModal() {
+    OpenLoginModal() { //mostra o login modal
         if (this.modal != null) {
             this.modal.style.display = "block";
         }
@@ -47,7 +47,7 @@ export default class NavLinksView {
 
     BindLoginLogoutLinks() {
 
-        if (!this.userController.IsUserLogged()) {
+        if (!this.userController.IsUserLogged()) { //verifica user login
             /* Bind the button to login button click to open the modal */
             if (this.loginStatusNavLink != null) {
                 this.loginStatusNavLink.addEventListener("click", event => {
@@ -70,6 +70,7 @@ export default class NavLinksView {
         }
     }
 
+    //mostra os links conforme o user login ou logout
     UpdateNavLinksInformation() {
         if (this.userController.IsUserLogged()) {
 
@@ -102,7 +103,7 @@ export default class NavLinksView {
 
     BindLoginForm() {
         if (this.loginForm != null) {
-            this.loginForm.addEventListener("submit", event => {
+            this.loginForm.addEventListener("submit", event => { //quando carrega o botao login
                 event.preventDefault()
                 try {
                     this.userController.Login(this.loginEmail.value, this.loginPassword.value)

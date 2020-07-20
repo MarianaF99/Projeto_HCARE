@@ -16,18 +16,19 @@ export default class FeedbackView {
         this.BindFeedbackButtonAction()
     }
 
+    //visibilidade do icon de feedback
     BindFeedbackIconBarVisibility() {
-        if (this.userController.IsUserLogged()) {
-            if(this.userController.FeedbackFromUserExists())
+        if (this.userController.IsUserLogged()) { //se tiver login feito
+            if(this.userController.FeedbackFromUserExists()) //verifica se utilizador deu feedback
             {
-                this.feedbackIconBar.style.display = "none";
+                this.feedbackIconBar.style.display = "none"; //nao mostra icon bar
             }
             else
             {
-                this.feedbackIconBar.style.display = "block";
+                this.feedbackIconBar.style.display = "block"; //mostra o elemento
             }
         } else {
-            this.feedbackIconBar.style.display = "none";
+            this.feedbackIconBar.style.display = "none";  //nao esta loggado logo nao mostra icon
         }
     }
 

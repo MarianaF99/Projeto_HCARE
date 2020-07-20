@@ -1,9 +1,9 @@
 import User from '../models/User.js'
 
 export default class LoginModel {
-    constructor() {
-        this.users = this.GetAllUsersFromLocalStorage()
-        this.appointments = this.GetAllAppointmentsFromLocalStorage()
+    constructor() { //listas de utilizadores e de consultas
+        this.users = this.GetAllUsersFromLocalStorage() //vai buscar os users
+        this.appointments = this.GetAllAppointmentsFromLocalStorage() //vai buscar todos os appointments
     }
 
     Logout() {
@@ -21,6 +21,7 @@ export default class LoginModel {
         return sessionStorage.getItem("loggedUser") !== null ? true : false
     }
 
+    //funcao que aumenta a experiencia do utilizador quando é dado feedback
     GiveUserFeedback(email) {
         this.UpdateAllUsersFromLocalStorage()
         for (var i = 0; i < this.users.length; i++) {
@@ -39,6 +40,7 @@ export default class LoginModel {
         }
     }
 
+    //Aumenta a experiencia do utilizador
     IncreaseUserLevelExperience(email) {
         this.UpdateAllUsersFromLocalStorage()
         for (var i = 0; i < this.users.length; i++) {
@@ -57,6 +59,7 @@ export default class LoginModel {
         }
     }
 
+    // bloqueia/desbloqueia o utilizador
     BlockUnlockUser(email) {
         let blockState = false
         this.UpdateAllUsersFromLocalStorage()
@@ -73,16 +76,19 @@ export default class LoginModel {
         return blockState
     }
 
+    //Apaga o utilizador
     DeleteUser(email) {
         this.users = this.users.filter(user => user.email != email)
         this._Persist()
     }
 
+    //vai buscar o email do utilizador
     GetUserLoggedData() {
         let userLoggedEmail = this.GetUserLoggedEmail()
         return this.users.find(user => user.email === userLoggedEmail)
     }
 
+    //Atualiza dados do utilizador
     UpdateUser(email, firstName, surname, address, phone, password, changePasswordState) {
         this.UpdateAllUsersFromLocalStorage()
         for (var i = 0; i < this.users.length; i++) {
@@ -124,7 +130,7 @@ export default class LoginModel {
     CreateUser(firstName, surname, email, dateOfBirth, gender, address, phone, password, avatarSourceImage) {
         this.UpdateAllUsersFromLocalStorage()
         var newUser = new User(firstName, surname, email, dateOfBirth, gender, address, phone, password, avatarSourceImage);
-        this.users.push(newUser);
+        this.users.push(newUser); //adiciona à lista de utilizadores um novo utilizador
         this._Persist();
     }
 
@@ -133,6 +139,7 @@ export default class LoginModel {
         localStorage.setItem('users', JSON.stringify(this.users))
     }
 
+    //mostra todos os utilizadores
     PrintAllUsersFromLocalStorage() {
         this.UpdateAllUsersFromLocalStorage()
         this.users.forEach(function(user, i) {
@@ -147,6 +154,7 @@ export default class LoginModel {
         localStorage.setItem('users', JSON.stringify(this.users))
     }
 
+    //cria um agendamento, associa o utilizador e o medico
     createAppointment(user, doctorEmail, date, time) {
         const appointment = {
             user: user,
@@ -155,7 +163,7 @@ export default class LoginModel {
             time: time
 
         }
-        this.appointments.push(appointment);
+        this.appointments.push(appointment); //adiciona a uma lista appointments
         this._persistAppointment();
 
     }

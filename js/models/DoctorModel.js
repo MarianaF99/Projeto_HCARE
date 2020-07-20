@@ -1,12 +1,15 @@
 export default class DoctorModel {
     constructor() {
+        //array para armazenar os doctors
         this.doctors = localStorage.doctors ? JSON.parse(localStorage.doctors) : [];
     }
 
+    //metodo que vai retornar lista de doctors
     getAll() {
         return this.doctors;
     }
 
+    //cria objeto do tipo doctor e armazena na lista de doctors
     create(firstName, lastName, photo, email, dateOfBirth, gender, adress, phone, specialty) {
         const doctor = {
             firstName: firstName,
@@ -19,7 +22,7 @@ export default class DoctorModel {
             phone: phone,
             specialty: specialty
         }
-        this.doctors.push(doctor);
+        this.doctors.push(doctor); //adiciona o medico à linha 4
         this._persist();
     }
 
