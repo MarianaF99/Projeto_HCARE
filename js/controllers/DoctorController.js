@@ -5,7 +5,7 @@ export default class DoctorController {
         this.doctorModel = new DoctorModel()
     }
 
-    addDoctor(firstName, lastName, photo, email, dateOfBirth, gender, adress, phone, specialty) {
+    addDoctor(firstName, lastName, photo, email, dateOfBirth, gender, adress, phone, specialty,score) {
         if (!this.doctorModel.getAll().some(doctor => doctor.email === email)) {
             this.doctorModel.create(
                 firstName,
@@ -16,7 +16,8 @@ export default class DoctorController {
                 gender,
                 adress,
                 phone,
-                specialty
+                specialty,
+                score=0
             );
         } else {
             throw Error(`This email "${email}" already exists!`);

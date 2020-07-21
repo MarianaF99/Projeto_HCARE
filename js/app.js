@@ -7,6 +7,7 @@ import AddDoctorView from '../js/views/AddDoctorView.js'
 import SearchDoctorView from '../js/views/SearchDoctorView.js'
 import AppointmentsView from '../js/views/AppointmentsView.js'
 import FeedbackView from '../js/views/FeedbackView.js'
+import RatingsView from '../js/views/RatingsView.js'
 
 class App {
     constructor() {
@@ -41,8 +42,8 @@ class App {
                 new AdminView()
                 break;
             case 'ratings.html':
-                new EditProfileView()
                 new NavLinksView()
+                new RatingsView()
                 break;
             case 'addDoctor.html':
                 new AddDoctorView()
@@ -54,7 +55,7 @@ class App {
             case 'appointments.html':
                 new NavLinksView()
                 new AppointmentsView()
-                break;
+                break; 
             default:
                 break;
         }
@@ -128,5 +129,5 @@ class App {
 
     }
 }
-
+//localStorage.clear(); // Delete all data in local store
 new App()
