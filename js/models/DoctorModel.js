@@ -38,5 +38,28 @@ export default class DoctorModel {
         localStorage.setItem('doctors', JSON.stringify(this.doctors));
     }
 
+    //Atualiza o score do médico
+    updateScore(firstName,scoreUser)
+    {
+        for (const doctor of this.doctors) {
+            
+            if(doctor.firstName == firstName)
+            {
+                if(doctor.score!=0)
+                {
+                    doctor.score=(doctor.score+scoreUser)/2
+                    console.log(doctor.score)
+                    this._persist();
+                }
+                else
+                {
+                    doctor.score=scoreUser
+                    console.log(doctor.score)
+                    this._persist();
+                }
+            }
+        }
+    }
+
 
 }

@@ -59,4 +59,9 @@ export default class DoctorController {
         }
         return filteredDoctors
     }
+
+    updateScore(firstName,score)
+    {
+        this.doctorModel.updateScore(firstName,score)
+    }
 }
