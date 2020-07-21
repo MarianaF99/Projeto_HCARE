@@ -51,6 +51,7 @@ export default class LoginModel {
                     if (parseInt(this.users[i].userLevelExperience) >= 100) {
                         this.users[i].userLevelExperience = 0
                         this.users[i].userLevel = parseInt(this.users[i].userLevel) + 1
+                        
                     }
                     this._Persist()
                     break
