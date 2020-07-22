@@ -27,7 +27,7 @@ export default class RatingsView {
     
     binddoctorSelect()
     {
-     this.doctorSelect.addEventListener('change', event => {  //modificaçao do doctor select/slecionar medico
+     this.doctorSelect.addEventListener('change', event => {  //modificaçao do doctor select/selecionar medico
       event.preventDefault();
         this.doctor = event.target.value;  //guarda o medico que escolheu
         // Enable rating control
