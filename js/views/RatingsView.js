@@ -12,6 +12,7 @@ export default class RatingsView {
 
   doctor=null;
     constructor() {
+
         this.doctorController = new DoctorController();
         /*this.doctorController.updateScore("Harry",1);*/
         
@@ -26,12 +27,12 @@ export default class RatingsView {
     
     binddoctorSelect()
     {
-     this.doctorSelect.addEventListener('change', event => {
+     this.doctorSelect.addEventListener('change', event => {  //modificaçao do doctor select/slecionar medico
       event.preventDefault();
-        this.doctor = event.target.value;
+        this.doctor = event.target.value;  //guarda o medico que escolheu
         // Enable rating control
         this.ratingControl.disabled = false;
-        this.ratingControl.value = this.ratings[this.doctor];
+        this.ratingControl.value = this.ratings[this.doctor];  //rating atual do medico (na pagina)
       });
     
     }
@@ -39,7 +40,7 @@ export default class RatingsView {
     // Rating control change
     bindratingControl(){
       if (this.ratingControl != null) {
-    this.ratingControl.addEventListener('blur', event => {
+    this.ratingControl.addEventListener('blur', event => {  //elemento deixa de estar selecionado
     event.preventDefault()
     const rating = event.target.value;
 
@@ -50,11 +51,11 @@ export default class RatingsView {
     }
 
     // Change rating
-    this.ratings[this.doctor] = rating;
+    this.ratings[this.doctor] = rating;  //guarda o novo rating na const ratings
     //console.log(rating)
     //console.log(this.doctor)
-    this.doctorController.updateScore(this.doctor,rating)
-    this.getRatings();
+    this.doctorController.updateScore(this.doctor,rating)  //altera o score do medico
+    this.getRatings(); //atualiza as estrelas
   });}
 }
 

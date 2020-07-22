@@ -41,19 +41,19 @@ export default class DoctorModel {
     //Atualiza o score do médico
     updateScore(firstName,scoreUser)
     {
-        for (const doctor of this.doctors) {
+        for (const doctor of this.doctors) {  //percorrer array dos médicos
             
-            if(doctor.firstName == firstName)
+            if(doctor.firstName == firstName)  //firstname para identificar medico
             {
-                if(doctor.score!=0)
+                if(doctor.score!=0)  //verifica se o score atual é diferente de 0
                 {
-                    doctor.score=(doctor.score+scoreUser)/2
+                    doctor.score= (doctor.score+parseInt(scoreUser))/2 //media
                     console.log(doctor.score)
                     this._persist();
                 }
                 else
                 {
-                    doctor.score=scoreUser
+                    doctor.score=parseInt(scoreUser)
                     console.log(doctor.score)
                     this._persist();
                 }
